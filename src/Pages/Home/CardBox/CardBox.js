@@ -1,9 +1,16 @@
 import React from 'react';
 import { Button, Card, CardGroup } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const CardBox = ({ equipment }) => {
+    const navigate = useNavigate()
 
-    const { name, price, quantity, img, description, supplierName } = equipment;
+    const { name, _id, price, quantity, img, description, supplierName } = equipment;
+
+    const gotoDetails = () => {
+        navigate(`/inventory/${_id}`)
+
+    }
     return (
         <div className='col-lg-4'>
             <CardGroup>
@@ -25,7 +32,7 @@ const CardBox = ({ equipment }) => {
                             supplier Name:- {supplierName}
                         </Card.Text>
                     </Card.Body>
-                    <Button variant='dark'>Stock Update</Button>
+                    <Button onClick={gotoDetails} variant='dark'>Stock Update</Button>
                 </Card>
             </CardGroup>
         </div>
