@@ -1,82 +1,101 @@
 [
     {
         "name": "thigh toner",
-        "price": 5000,
+        "price": 1000,
         "img": "https://i.pinimg.com/474x/98/46/7f/98467f0138a7d431f3d8d69f5f408375--fitness-at-home-top-fitness.jpg",
         "description": " sport & outdoor machine.easy to use ",
         "supplierName": "shakib",
-        "quantity": 3
+        "quantity": 3,
+        "sold": "no"
     },
     {
-        "name": "thigh toner",
-        "price": 1000,
-        "supplierName": "shakib",
-        "quantity": 3,
-        "supplier name": "",
-        "shipping cost": ""
+        "name": "Dumbell",
+        "price": 8000,
+        "img": "https://astepahead.nl/getimage/products/jlhexu-10.jpg",
+        "description": " very cheap.easy to use ",
+        "supplierName": "munna",
+        "quantity": 1952,
+        "sold": "yes"
     },
     {
-        "name": "thigh toner",
-        "price": 1000,
-        "supplierName": "shakib",
-        "quantity": 3,
-        "supplier name": "",
-        "shipping cost": ""
+        "name": "Burbell",
+        "price": 15000,
+        "img": "https://azcd.harveynorman.com.au/media/catalog/product/cache/21/image/992x558/9df78eab33525d08d6e5fb8d27136e95/5/e/5ec47a18cd9f4.500x500_1.jpg",
+        "description": " very easy to use...very cheap rate ..long lasting ",
+        "supplierName": "aman",
+        "quantity": 20,
+        "sold": "no"
     },
     {
-        "name": "thigh toner",
-        "price": 1000,
-        "supplierName": "shakib",
-        "quantity": 3,
-        "supplier name": "",
-        "shipping cost": ""
+        "name": "cycleling",
+        "price": 11000,
+        "supplierName": "rimon",
+        "quantity": 12,
+        "description": "easy to use.improve leg strongness",
+        "sold": "no"
     },
     {
-        "name": "thigh toner",
-        "price": 1000,
-        "supplierName": "shakib",
-        "quantity": 3,
-        "supplier name": "",
-        "shipping cost": ""
+        "name": "t bar",
+        "price": 5000,
+        "supplierName": "saad",
+        "quantity": 32,
+        "description": "easy to use ,use for power lifting",
+        "sold": "yes"
     },
     {
-        "name": "thigh toner",
-        "price": 1000,
-        "supplierName": "shakib",
-        "quantity": 3,
-        "supplier name": "",
-        "shipping cost": ""
+        "name": "climbing rope",
+        "price": 2000,
+        "supplierName": "symon",
+        "quantity": 35,
+        "description": "use for upper body .cheap rate product",
+        "sold": "no"
     },
     {
-        "name": "thigh toner",
-        "price": 1000,
-        "supplierName": "shakib",
-        "quantity": 3,
-        "supplier name": "",
-        "shipping cost": ""
+        "name": "parallel bar",
+        "price": 11000,
+        "supplierName": "faisal",
+        "quantity": 35,
+        "description": "use for power lifting",
+        "sold": "no"
     },
     {
-        "name": "thigh toner",
-        "price": 1000,
-        "supplierName": "shakib",
-        "quantity": 3,
-        "supplier name": "",
-        "shipping cost": ""
+        "name": "treadmil",
+        "price": 20000,
+        "supplierName": "munna",
+        "quantity": 33,
+        "description": "use for walk enviroment",
+        "sold": "yes"
     },
     {
-        "name": "thigh toner",
+        "name": "skipping rope",
         "price": 1000,
         "supplierName": "shakib",
-        "quantity": 3,
-        "supplier name": "",
-        "shipping cost": ""
+        "quantity": 311,
+        "description": "easy to use,very very important tools",
+        "sold": "yes"
     },
     {
-        "name": "thigh toner",
-        "price": 1000,
-        "supplierName": "shakib",
-        "quantity": 3,
-        "supplier name": "",
-        "shipping cost": ""
+        "name": "barbell bench",
+        "price": 13000,
+        "supplierName": "rimon",
+        "quantity": 32,
+        "description": "easy to use,very very important tools",
+        "sold": "no"
+    },
+    {
+        "name": "smith machine",
+        "price": 12000,
+        "supplierName": "shakib vy",
+        "quantity": 23,
+        "description": "everyone love to use",
+        "sold": "no"
+    },
+    {
+        "name": "step mill",
+        "price": 12000,
+        "supplierName": "munna",
+        "quantity": 23,
+        "description": "easy to use",
+        "sold": "no"
     }
 ]

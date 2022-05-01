@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const CardBox = ({ equipment }) => {
     const navigate = useNavigate()
 
-    const { name, _id, price, quantity, img, description, supplierName } = equipment;
+    const { name, _id, price, quantity, img, description, supplierName, sold } = equipment;
 
     const gotoDetails = () => {
         navigate(`/inventory/${_id}`)
@@ -31,6 +31,11 @@ const CardBox = ({ equipment }) => {
                         <Card.Text>
                             supplier Name:- {supplierName}
                         </Card.Text>
+
+                        <Card.Text>
+                            sold:- {sold}
+                        </Card.Text>
+
                     </Card.Body>
                     <Button onClick={gotoDetails} variant='dark'>Stock Update</Button>
                 </Card>

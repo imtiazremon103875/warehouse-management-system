@@ -1,20 +1,44 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Button, Card, CardGroup } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const EquipmentDetail = () => {
     const { id } = useParams();
     const [detail, setDetail] = useState({})
-    const { name, _id, price, quantity, img, description, supplierName, sold } = detail;
+    const [quantityData, setQuantityData] = useState("")
+    const { name, price, quantity, img, description, supplierName, sold } = detail;
+
+    const [info, setInfo] = useState(quantity)
+
     useEffect(() => {
-        const url = `http://localhost:5000/equipment/${id}`
-        fetch(url)
-            .then(response => response.json())
-            .then(data => setDetail(data))
-    }, [])
+        if (Object.keys(detail).length !== 0) {
+            setInfo(detail.quantity)
+        }
+    }, [detail])
+
+
+    useEffect(() => {
+
+
+        const getDetail = async () => {
+            try {
+                const res = await axios.get(`http://localhost:5000/equipment/${id}`,
+                )
+                setDetail(res?.data)
+                setQuantityData(res?.data?.quantity)
+
+            } catch (err) {
+                console.log(err)
+            }
+        }
+        getDetail()
+
+
+    }, [id]);
 
     const handleDelivered = () => {
-        let newQuantity = quantity - 1;
+        let newQuantity = quantityData - 1;
 
         const updatedQuantity = { quantity: newQuantity }
         const url = `http://localhost:5000/equipment/${id}`
@@ -26,8 +50,15 @@ const EquipmentDetail = () => {
             body: JSON.stringify(updatedQuantity)
 
         })
-            .then(response => response.json())
-            .then(data => console.log("success", data))
+            .then(res => res.json())
+            .then(data => {
+                console.log("success", data)
+
+
+                setInfo(updatedQuantity.quantity)
+                setQuantityData(newQuantity)
+            })
+
 
 
     }
@@ -35,7 +66,7 @@ const EquipmentDetail = () => {
     const handleRestore = event => {
         event.preventDefault()
         const value = event.target.number.value;
-        let newQuantity = parseInt(quantity) + parseInt(value);
+        let newQuantity = parseInt(quantityData) + parseInt(value);
 
         const updatedQuantity = { quantity: newQuantity }
         const url = `http://localhost:5000/equipment/${id}`
@@ -47,9 +78,14 @@ const EquipmentDetail = () => {
             body: JSON.stringify(updatedQuantity)
 
         })
-            .then(response => response.json())
-            .then(data => console.log("success", data))
-        console.log(value)
+            .then(res => res.json())
+            .then(data => {
+                console.log("success", data)
+                setInfo(updatedQuantity.quantity)
+                setQuantityData(newQuantity)
+
+            })
+
         event.target.reset();
 
     }
@@ -69,7 +105,7 @@ const EquipmentDetail = () => {
                                 {description}
                             </Card.Text>
                             <Card.Text>
-                                Quantity: {quantity}
+                                Quantity: {info}
                             </Card.Text>
                             <Card.Text>
                                 supplier Name:- {supplierName}
@@ -90,7 +126,11 @@ const EquipmentDetail = () => {
                 <input className='mt-3 w-25' name="number" type="number" />
                 <br />
                 <input className='mt-3 w-25' type="submit" value="Restock" />
+                <br />
+                <Button className='ms-5 mt-5' as={Link} to='/manageInventory' variant='dark w-50 d-block mx-auto my-3'>Manage Inventory</Button>
             </form>
+
+
         </div>
     );
 };
