@@ -8,6 +8,8 @@ import Footer from './Pages/Shared/Footer/Footer';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import Blogs from './Pages/Blogs/Blogs';
 import AddItem from './Pages/AddItem/AddItem';
+import Login from './Pages/Authentication/Login/Login';
+import Register from './Pages/Authentication/Register/Register';
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
         <Route path="/manageInventory" element={<ManageInventory></ManageInventory>}></Route>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
         <Route path="/addItem" element={<AddItem></AddItem>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
 
 
       </Routes>
