@@ -7,6 +7,7 @@ import EquipmentDetail from './Pages/EquipmentDetail/EquipmentDetail';
 import Footer from './Pages/Shared/Footer/Footer';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import Blogs from './Pages/Blogs/Blogs';
+import AddItem from './Pages/AddItem/AddItem';
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path="/inventory/:id" element={<EquipmentDetail></EquipmentDetail>}></Route>
         <Route path="/manageInventory" element={<ManageInventory></ManageInventory>}></Route>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
+        <Route path="/addItem" element={<AddItem></AddItem>}></Route>
+
 
       </Routes>
 
