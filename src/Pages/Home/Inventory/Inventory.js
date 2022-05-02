@@ -10,6 +10,8 @@ const Inventory = () => {
 
     const [equipments, setEquipment] = useEquipment([])
 
+    const threeItems = equipments.slice(0, 3)
+
 
     return (
         <div className='text-center my-3'>
@@ -17,7 +19,7 @@ const Inventory = () => {
 
             <div className='row'>
                 {
-                    equipments.map(equipment => <CardBox key={equipment._id} equipment={equipment}></CardBox>)
+                    threeItems.map(equipment => <CardBox key={equipment._id} equipment={equipment}></CardBox>)
                 }
             </div>
             <Button as={Link} to='/manageInventory' variant='dark w-50 d-block mx-auto my-3'>Manage Inventory</Button>

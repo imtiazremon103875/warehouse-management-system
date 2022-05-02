@@ -10,6 +10,6 @@ const useEquipment = () => {
             .then(data => setEquipment(data))
     }, [])
 
-    return [equipments]
+    return [equipments, setEquipment]
 }
 export default useEquipment
