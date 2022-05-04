@@ -10,20 +10,20 @@ const Inventory = () => {
 
     const [equipments, setEquipment] = useEquipment([])
 
-    const threeItems = equipments.slice(0, 3)
+    const threeItems = equipments.slice(0, 6)
 
 
     return (
-        <div className='text-center my-3'>
+        <div className='text-center my-3' id='items'>
             <h2>inventory items</h2>
 
-            <div className='row'>
+            <div className='row' >
                 {
                     threeItems.map(equipment => <CardBox key={equipment._id} equipment={equipment}></CardBox>)
                 }
             </div>
             <Button as={Link} to='/manageInventory' variant='dark w-50 d-block mx-auto my-3'>Manage Inventory</Button>
-        </div>
+        </div >
     );
 };
 

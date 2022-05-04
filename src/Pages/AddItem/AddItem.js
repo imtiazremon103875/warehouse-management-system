@@ -9,7 +9,8 @@ const AddItem = () => {
         const price = event.target.price.value
         const quantity = event.target.quantity.value
         const sold = event.target.sold.value
-        const newEquipment = { name, price, quantity, sold }
+        const img = event.target.image.value
+        const newEquipment = { name, price, quantity, sold, img }
 
         fetch('http://localhost:5000/equipment', {
 
@@ -32,6 +33,7 @@ const AddItem = () => {
                 <input placeholder='equipment name' className='d-block' type="text" name='name' required />
 
                 <input placeholder='price' type="number" name='price' required />
+                <input placeholder='image' type="text" name='image' required />
                 <input placeholder='quantity' type="number" name='quantity' required />
                 <input placeholder='sold' type="text" name='sold' required />
                 <input className='btn btn-dark' type="submit" value="add item" />

@@ -3,10 +3,19 @@ import { Button } from 'react-bootstrap';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate = useNavigate()
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+    let errorElement;
+    if (error) {
+        errorElement = <p className='text-danger'>{error?.message}</p>
+    }
     if (user) {
         navigate('/')
     }
@@ -20,6 +29,7 @@ const SocialLogin = () => {
 
                 </div>
             </div>
+            {errorElement}
 
             <Button onClick={() => signInWithGoogle()} className='w-100 d-block rounded-pill' variant="dark" type="submit">
                 <img className='me-3' alt="" />

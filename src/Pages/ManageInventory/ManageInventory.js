@@ -4,6 +4,7 @@ import { Button, Table } from 'react-bootstrap';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import useEquipment from '../../Hook/UseEuipment';
 import { Link } from 'react-router-dom';
+import "./MangeInventory.css"
 
 
 
@@ -37,7 +38,7 @@ const ManageInventory = () => {
                 <thead>
                     <tr>
 
-                        <th style={{ width: "20%" }}>Name</th>
+                        <th style={{ width: "20%" }}>Name and picture</th>
                         <th style={{ width: "20%" }}>price</th>
                         {/* <th style={{ width: "30px" }}>description</th> */}
                         <th style={{ width: "20%" }}>quantity</th>
@@ -52,7 +53,7 @@ const ManageInventory = () => {
 
                         <tbody>
                             <tr>
-                                <td style={{ width: "20%" }}>{equipment.name}</td>
+                                <td style={{ width: "20%" }}>{equipment.name} <img className='img' src={equipment.img} alt="" /></td>
                                 <td style={{ width: "20%" }}>{equipment.price}</td>
                                 {/* <td style={{ width: "30px" }}>{description}</td> */}
                                 <td style={{ width: "20%" }}>{equipment.quantity}</td>
