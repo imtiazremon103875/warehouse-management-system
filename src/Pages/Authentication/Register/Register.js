@@ -5,6 +5,8 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const nameRef = useRef('')
@@ -18,7 +20,7 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     if (loading) {
         return <Loading></Loading>
     }
@@ -38,6 +40,7 @@ const Register = () => {
         else {
             createUserWithEmailAndPassword(email, password)
             // navigate('/home')
+            toast("verification email sent")
         }
 
 
