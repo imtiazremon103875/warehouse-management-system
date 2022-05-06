@@ -38,6 +38,11 @@ const EquipmentDetail = () => {
     }, [id]);
 
     const handleDelivered = () => {
+
+        if (quantityData === 0) {
+            alert("this product is not available")
+            return;
+        }
         let newQuantity = quantityData - 1;
 
         const updatedQuantity = { quantity: newQuantity }

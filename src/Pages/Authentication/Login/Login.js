@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
@@ -11,7 +11,9 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 const Login = () => {
     const emailRef = useRef('')
     const passwordRef = useRef('')
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
     const [
         signInWithEmailAndPassword,
         user,
@@ -30,7 +32,7 @@ const Login = () => {
         errorElement = <p className='text-danger'>{error?.message} {error2?.message}</p>
     }
     if (user) {
-        navigate('/home')
+        navigate(from, { replace: true })
     }
 
     const handleSubmit = event => {

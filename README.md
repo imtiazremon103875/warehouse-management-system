@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# Anik gym warehouse management system
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is live website [Create React App](https://github.com/facebook/create-react-app).
+
+
+# short description about website
+
+This is a warehouse management system,which about anik gym fitness.this website has a banner,some services item,if we click stock items ,then the services item stock will increase or decrease.there has and option which call manange items.we are easily manage or show and delete item from the list.in this list there has all data which load in this page.in this page there has a option which call add item,we can easily add item by compltete this form.
+
+# My website's different features & functionally
+
+* This we site has a home page,which has banner,header,footer,some servies
+* This website has login authentication system.
+* This website has required auth system
+* This website has route syetem
+* This website has email verification,email password system
+* This website has jwt token system.
 
 ## Available Scripts
 

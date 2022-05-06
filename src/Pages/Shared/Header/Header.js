@@ -25,12 +25,10 @@ const Header = () => {
                         </Nav>
                         <Nav>
                             {
-                                user ? <Nav.Link onClick={handleSignout} as={Link} to="/login">Log Out</Nav.Link> :
+                                user ? <>  <Nav.Link as={Link} to="/manageInventory">Manage item</Nav.Link>  <Nav.Link as={Link} to="/myItem">My item</Nav.Link>  <Nav.Link as={Link} to="/addItem">Add item</Nav.Link> <Nav.Link onClick={handleSignout} as={Link} to="/login">Log Out</Nav.Link> </> :
                                     <Nav.Link as={Link} to="/login">Login</Nav.Link>
                             }
-                            <Nav.Link eventKey={2} href="#memes">
-                                Dank memes
-                            </Nav.Link>
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

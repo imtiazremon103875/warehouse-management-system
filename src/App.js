@@ -12,6 +12,8 @@ import Login from './Pages/Authentication/Login/Login';
 import Register from './Pages/Authentication/Register/Register';
 import RequiredAuth from './Pages/Authentication/RequiredAuth/RequiredAuth';
 import { ToastContainer } from 'react-toastify';
+import Notfound from './Pages/Shared/Notfound/Notfound';
+import MyItem from './Pages/MyItem/MyItem';
 
 
 
@@ -26,9 +28,11 @@ function App() {
         <Route path="/inventory/:id" element={<RequiredAuth><EquipmentDetail></EquipmentDetail></RequiredAuth>}></Route>
         <Route path="/manageInventory" element={<ManageInventory></ManageInventory>}></Route>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
-        <Route path="/addItem" element={<AddItem></AddItem>}></Route>
+        <Route path="/addItem" element={<RequiredAuth><AddItem></AddItem></RequiredAuth>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="/myItem" element={<MyItem></MyItem>}></Route>
+        <Route path="*" element={<Notfound></Notfound>}></Route>
 
 
       </Routes>
