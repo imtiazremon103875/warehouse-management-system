@@ -21,7 +21,7 @@ const ManageInventory = () => {
             fetch(url, {
                 method: 'DELETE'
             })
-                .then(res => res.json)
+                .then(res => res.json())
                 .then(data => {
                     console.log(data)
                     const rest = equipments.filter(equipment => equipment._id !== id)
