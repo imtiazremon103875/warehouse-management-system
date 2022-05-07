@@ -1,0 +1,44 @@
+.award-container {
+    display: flex;
+    align-items: center;
+}
+
+.award-deatils {
+    margin-right: 80px;
+    margin-left: 20px;
+}
+
+
+.award-deatils img {
+    width: 120px;
+    border-radius: 50%;
+
+}
+
+.single-award {
+    background-color: lightblue;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.award-img {
+    width: 35%;
+    border-radius: 20px;
+}
+
+@media screen and (max-width:700px) {
+    .award-container {
+        flex-direction: column;
+    }
+
+    .award-deatils {
+        width: 90%;
+        margin-left: auto;
+        margin-left: auto;
+    }
+
+    .award-img {
+        width: 90%;
+    }
+}

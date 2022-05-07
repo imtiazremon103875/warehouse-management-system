@@ -1,0 +1,21 @@
+.mass-img {
+    width: 30vw;
+}
+
+.mass-text {
+    width: 50vw;
+}
+
+@media screen and (max-width:880px) {
+    .mass-container {
+        flex-direction: column;
+    }
+
+    .mass-img {
+        width: 50vw;
+    }
+
+    .mass-text {
+        width: 80vw;
+    }
+}
