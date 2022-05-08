@@ -20,7 +20,7 @@ const AddItem = () => {
             img: event.target.image.value,
         }
 
-        fetch('http://localhost:5000/equipment', {
+        fetch('https://pure-reaches-06573.herokuapp.com/equipment', {
 
             method: 'POST',
             headers: {
@@ -34,7 +34,7 @@ const AddItem = () => {
                 event.target.reset();
             })
 
-        axios.post('http://localhost:5000/addedItem', newEquipment)
+        axios.post('https://pure-reaches-06573.herokuapp.com/addedItem', newEquipment)
             .then(res => {
                 const { data } = res;
 

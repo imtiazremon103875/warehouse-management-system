@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -32,15 +33,18 @@ const Login = () => {
         errorElement = <p className='text-danger'>{error?.message} {error2?.message}</p>
     }
     if (user) {
-        navigate(from, { replace: true })
+        // navigate(from, { replace: true })
     }
 
-    const handleSubmit = event => {
+    const handleSubmit = async event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        signInWithEmailAndPassword(email, password)
-        // navigate('/home')
+        await signInWithEmailAndPassword(email, password)
+
+        const { data } = await axios.post('https://pure-reaches-06573.herokuapp.com/login', { email });
+        localStorage.setItem('accessToken', data.accessToken)
+        navigate(from, { replace: true })
 
     }
     const resetPassword = async () => {
@@ -54,7 +58,7 @@ const Login = () => {
         }
     }
     return (
-        <div className='w-25 mx-auto border border-dark mt-3 px-3 py-2 rounded'>
+        <div className='w-25  mx-auto border border-dark mt-3 px-3 py-2 rounded'>
             <h2 className='text-center'>Please Login</h2>
 
             <Form onSubmit={handleSubmit}>

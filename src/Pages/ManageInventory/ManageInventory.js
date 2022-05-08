@@ -17,7 +17,7 @@ const ManageInventory = () => {
 
 
         if (proceed) {
-            const url = `http://localhost:5000/equipment/${id}`
+            const url = `https://pure-reaches-06573.herokuapp.com/equipment/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

@@ -5,7 +5,7 @@ const useEquipment = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/equipment')
+        fetch('https://pure-reaches-06573.herokuapp.com/equipment')
             .then(response => response.json())
             .then(data => setEquipment(data))
     }, [])

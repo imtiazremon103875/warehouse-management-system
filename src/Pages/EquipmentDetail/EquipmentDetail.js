@@ -23,7 +23,7 @@ const EquipmentDetail = () => {
 
         const getDetail = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/equipment/${id}`,
+                const res = await axios.get(`https://pure-reaches-06573.herokuapp.com/equipment/${id}`,
                 )
                 setDetail(res?.data)
                 setQuantityData(res?.data?.quantity)
@@ -46,7 +46,7 @@ const EquipmentDetail = () => {
         let newQuantity = quantityData - 1;
 
         const updatedQuantity = { quantity: newQuantity }
-        const url = `http://localhost:5000/equipment/${id}`
+        const url = `https://pure-reaches-06573.herokuapp.com/equipment/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -74,7 +74,7 @@ const EquipmentDetail = () => {
         let newQuantity = parseInt(quantityData) + parseInt(value);
 
         const updatedQuantity = { quantity: newQuantity }
-        const url = `http://localhost:5000/equipment/${id}`
+        const url = `https://pure-reaches-06573.herokuapp.com/equipment/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {

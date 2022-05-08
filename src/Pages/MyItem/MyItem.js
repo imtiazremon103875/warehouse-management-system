@@ -1,35 +1,49 @@
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyItem = () => {
     const [items, setItems] = useState([])
     const [user] = useAuthState(auth)
+    const navigate = useNavigate()
     useEffect(() => {
         const getItems = async () => {
             const email = user?.email;
-            const url = `http://localhost:5000/addedItem?email=${email}`
+            const url = `https://pure-reaches-06573.herokuapp.com/addedItem?email=${email}`
             try {
-                const { data } = await axios.get(url);
+                const { data } = await axios.get(url, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                });
+
                 setItems(data)
             }
             catch (error) {
-                console.log(error)
+                console.log(error.message)
+                if (error.response.status === 401 || error.response.status === 403) {
+
+                    signOut(auth)
+                    navigate('/login')
+
+                }
             }
         }
         getItems()
-    }, [])
+    }, [user])
 
     const handleDelete = id => {
         const proceed = window.confirm("do you want to delete")
 
 
         if (proceed) {
-            const url = `http://localhost:5000/addedItem/${id}`
+            const url = `https://pure-reaches-06573.herokuapp.com/addedItem/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
