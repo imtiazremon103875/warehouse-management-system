@@ -1,6 +1,6 @@
 # Anik gym warehouse management system
 
-This is live website [Create React App](https://github.com/facebook/create-react-app).
+This is live website [https://gym--equipment-warehouse.web.app/home](https://gym--equipment-warehouse.web.app/home).
 
 
 # short description about website
